@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" fill="none">
+  <defs>
+    <linearGradient id="paper" x1="80" y1="0" x2="730" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#eef4ec"/><stop offset="1" stop-color="#e0eae2"/>
+    </linearGradient>
+    <linearGradient id="card" x1="220" y1="460" x2="580" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/><stop offset="1" stop-color="#f7faf5"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#244c38" flood-opacity=".08"/>
+    </filter>
+  </defs>
+  <path fill="url(#paper)" d="M0 0h800v1000H0z"/>
+  <g stroke="#b6cdbd" stroke-opacity=".36">
+    <circle cx="410" cy="615" r="330"/><circle cx="410" cy="615" r="268"/>
+    <path d="M80 615h660M410 285v660" stroke-dasharray="3 9"/>
+  </g>
+  <g font-family="Segoe UI, PingFang SC, Microsoft YaHei, sans-serif">
+    <text x="112" y="166" fill="#567262" font-size="12" font-weight="600" letter-spacing="3">A LITTLE LESS. A LITTLE MORE YOU.</text>
+    <text x="108" y="240" fill="#203e31" font-size="47" font-weight="600" letter-spacing="-2">你的节奏，</text>
+    <text x="108" y="308" fill="#203e31" font-size="47" font-weight="600" letter-spacing="-2">你的个人助手。</text>
+    <text x="112" y="355" fill="#607568" font-size="17">把重复留给本地，把专注留给你。</text>
+    <g transform="translate(180 467) rotate(-7 180 120)" filter="url(#shadow)">
+      <rect width="360" height="250" rx="20" fill="#f7faf5" stroke="#c6d7c9"/>
+      <path d="M26 32h110" stroke="#cedcd0" stroke-width="7" stroke-linecap="round"/>
+      <path d="M26 60h212" stroke="#e0e9df" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <g filter="url(#shadow)">
+      <rect x="212" y="472" width="386" height="266" rx="20" fill="url(#card)" stroke="#d2dfd2"/>
+      <rect x="240" y="501" width="35" height="35" rx="10" fill="#e8f0e7"/>
+      <path d="M250 512h15m-15 6h15m-15 6h9" stroke="#54775e" stroke-width="2" stroke-linecap="round"/>
+      <text x="289" y="525" fill="#314e3b" font-size="17" font-weight="600">日常工作，有条不紊</text>
+      <path d="M240 556h329" stroke="#e7ede4"/>
+      <g stroke="#4f7b5f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="241" y="581" width="19" height="19" rx="6" fill="#edf4e9" stroke="#dbe8d6"/>
+        <path d="m246 590 3 3 6-7"/>
+        <rect x="241" y="623" width="19" height="19" rx="6" fill="#edf4e9" stroke="#dbe8d6"/>
+        <path d="m246 632 3 3 6-7"/>
+        <rect x="241" y="665" width="19" height="19" rx="6" fill="#edf4e9" stroke="#dbe8d6"/>
+        <path d="m246 674 3 3 6-7"/>
+      </g>
+      <g fill="#657768" font-size="15">
+        <text x="277" y="596">整理资料与待办</text>
+        <text x="277" y="638">记住你确认的偏好</text>
+        <text x="277" y="680">每次花费，清楚可查</text>
+      </g>
+    </g>
+    <g transform="translate(520 421) rotate(8 37 37)" filter="url(#shadow)">
+      <rect width="74" height="74" rx="22" fill="#2a6652"/>
+      <path d="M25 23v28m24-28v28M25 37h24" stroke="#edf5ec" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <circle cx="170" cy="746" r="8" fill="#9cb89b"/>
+    <circle cx="629" cy="582" r="5" fill="#a5bca6"/>
+    <text x="112" y="892" fill="#5d7866" font-size="13" letter-spacing=".4">更少无谓调用 · 更贴合你的配置</text>
+  </g>
+</svg>

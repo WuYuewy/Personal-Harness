@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="48" viewBox="0 0 270 48">
+  <rect x="1" y="5" width="38" height="38" rx="12" fill="#256653"/>
+  <path d="M12 16v16m16-16v16M12 24h16" stroke="#f4faf5" stroke-width="3" stroke-linecap="round"/>
+  <text x="51" y="31" fill="#256653" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="600" letter-spacing="-.6">Personal Harness</text>
+</svg>

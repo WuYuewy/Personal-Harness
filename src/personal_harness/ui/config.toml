@@ -27,6 +27,10 @@ cot = "tool_call"
 custom_css = "/public/harness.css"
 custom_js = "/public/harness.js"
 custom_build = ".chainlit/frontend"
+logo_file_url = "/public/brand.svg"
+login_page_image = "/public/login-panel.svg"
+login_page_image_filter = "none"
+login_page_image_dark_filter = "none"
 alert_style = "modern"
 
 [meta]

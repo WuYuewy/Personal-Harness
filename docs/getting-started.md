@@ -18,7 +18,7 @@ uv run personal-harness ui
 
 Agent 首次打开默认使用明亮模式；你可以在界面菜单中切换主题，选择会保留在当前浏览器中。
 
-![首次登录，自行设置本地密码](site/screenshots/01-login.png)
+![新版登录页：清晰矢量插画与 Personal Harness 品牌，自行设置本地密码](site/screenshots/01-login.png)
 
 ![明亮模式下的新聊天入口](site/screenshots/02-welcome.png)
 

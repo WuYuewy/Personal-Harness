@@ -33,6 +33,10 @@ chainlit.md
 /public/elements/ReportRecipes.jsx
 /public/elements/RunReceipt.jsx
 /public/favicon.png
+/public/brand.svg
+/public/logo_light.svg
+/public/logo_dark.svg
+/public/login-panel.svg
 /public/vendor/
 /public/harness.js
 /public/harness.css

@@ -99,6 +99,17 @@ with (root / "server.log").open("w", encoding="utf-8") as log:
                 ),
             )
             page.goto(url, wait_until="domcontentloaded")
+            illustration = page.locator('img[src="/public/login-panel.svg"]')
+            expect(illustration).to_be_visible()
+            illustration.evaluate("img => img.decode()")
+            assert (
+                page.request.get(url + "/logo?theme=light").body()
+                == files("personal_harness").joinpath("ui/brand.svg").read_bytes()
+            )
+            page.set_viewport_size({"width": 390, "height": 844})
+            expect(illustration).not_to_be_visible()
+            assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+            page.set_viewport_size({"width": 1440, "height": 1000})
             page.locator("input").first.fill("local")
             page.locator("input[type=password]").fill("local-ui-test-only")
             page.locator("button[type=submit]").click()

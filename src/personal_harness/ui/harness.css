@@ -51,6 +51,8 @@ body {
   font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei UI", system-ui, sans-serif;
 }
 
+body:has(input#password) img.logo { width: 230px; height: auto; }
+
 [data-sidebar="sidebar"] { border-inline-end: 1px solid hsl(var(--border)); }
 [data-sidebar="header"] { border-bottom: 1px solid hsl(var(--border)); margin: 0 10px; padding-inline: 0; }
 [data-sidebar="header"]::before {
