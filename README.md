@@ -44,8 +44,6 @@ Harness 通过本地执行、范围明确的检索/读取、工具选择、历�
 
 [快速开始](https://wuyuewy.github.io/Personal-Harness/#getting-started) · [个性化](https://wuyuewy.github.io/Personal-Harness/#personalization) · [省钱机制](https://wuyuewy.github.io/Personal-Harness/#savings) · [功能边界](https://wuyuewy.github.io/Personal-Harness/#limits)
 
-文档包含 17 张真实 UI 操作截图及[综合任务演示](https://wuyuewy.github.io/Personal-Harness/#task-demo)：本地核账 → 在线多份资料分析 → 写入审批 → 下载 → 保存个人方案。Agent 首次打开默认采用明亮模式。
-
 ![Personal Harness 明亮模式界面](docs/site/screenshots/02-welcome.png)
 
 ## SDK
