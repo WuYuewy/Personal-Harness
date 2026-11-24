@@ -7,6 +7,7 @@ from importlib.resources import files
 from pathlib import Path
 
 import pytest
+from click import unstyle
 from typer.testing import CliRunner
 
 from personal_harness import cli
@@ -128,4 +129,5 @@ def test_ui_launch_error_and_interrupt(config_file, monkeypatch, error, expected
 def test_ui_help_needs_no_config_or_chainlit_import(monkeypatch):
     monkeypatch.setattr(cli, "find_spec", lambda name: pytest.fail("checked extra"))
     result = runner.invoke(cli.app, ["ui", "--help"])
-    assert result.exit_code == 0 and "--config" in result.stdout and "--port" in result.stdout
+    output = unstyle(result.stdout)
+    assert result.exit_code == 0 and "--config" in output and "--port" in output
