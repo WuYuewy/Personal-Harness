@@ -11,6 +11,7 @@ import os
 import secrets
 import shlex
 import sqlite3
+import sys
 from collections.abc import Iterator
 from contextlib import contextmanager
 from datetime import UTC, datetime
@@ -45,7 +46,7 @@ def public_metadata(value: Any) -> Any:
 
 def _protect(value: bytes, *, decrypt: bool = False) -> bytes:
     # Windows keys are tied to the current OS user. Unix relies on private local files.
-    if os.name != "nt":
+    if sys.platform != "win32":
         return value
 
     class Blob(ctypes.Structure):
