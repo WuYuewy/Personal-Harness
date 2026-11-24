@@ -1,0 +1,21 @@
+# Paths are relative to this file. Output is a new file under workspace-demo/.
+schema_version = 1
+default_profile = "my_work"
+
+[base.user]
+display_name = "You"
+
+[base.workspace]
+root = "workspace-demo"
+max_read_bytes = 32000
+max_write_bytes = 32000
+
+[base.preferences]
+language = "zh-CN"
+response_style = "detailed"
+
+[profiles.my_work.tools]
+allowed = ["workspace.list", "workspace.read", "workspace.search", "workspace.write_preview", "workspace.write"]
+
+[profiles.read_only.tools]
+allowed = ["workspace.list", "workspace.read", "workspace.search"]

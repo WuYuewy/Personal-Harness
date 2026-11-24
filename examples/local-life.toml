@@ -1,0 +1,28 @@
+# Synthetic local data only. Coordinates use WGS84; they are not GPS detection.
+schema_version = 1
+default_profile = "nearby"
+
+[base.preferences]
+language = "zh-CN"
+city = "示例城市"
+
+[base.local_life]
+data_file = "local-life/places.json"
+latitude = 31.82
+longitude = 117.23
+max_distance_m = 1000
+max_price_cny = "30"
+max_results = 2
+max_data_age_hours = 24
+
+[base.tools]
+allowed = ["places.search"]
+
+[profiles.nearby]
+instructions = ["按本地来源筛选，列出价格、直线距离、来源和采集时间；不声称实时营业。"]
+
+[profiles.budget.local_life]
+max_price_cny = "15"
+
+[profiles.cowork.tools]
+allowed = ["workspace.read"]

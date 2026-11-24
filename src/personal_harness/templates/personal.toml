@@ -1,0 +1,85 @@
+# This is YOUR harness. Change the base once; profiles override only what differs.
+# Relative workspace paths are resolved from this file's directory.
+schema_version = 1
+default_profile = "desktop"
+
+[base]
+instructions = ["Respect my preferences and stay within the configured task scope."]
+
+[base.user]
+display_name = "You"
+
+[base.preferences]
+language = "zh-CN"
+response_style = "concise"
+priorities = ["control_cost", "practical_results"]
+# city = "Shanghai" # Optional; especially useful for the mobile profile.
+
+[base.experience]
+# Defaults do not add experience-specific text to model prompts.
+# preferred_name = "Alex" # Optional name the model may use in replies.
+tone = "neutral"
+verbosity = "balanced"
+answer_format = "adaptive"
+clarification = "when_needed"
+initiative = false
+cite_sources = true
+cost_strategy = "prioritize_cost"
+# personal_instructions = "先给结论，再补必要细节。"
+
+[base.model]
+provider = "fake"
+model = "offline-demo"
+max_output_tokens = 1024
+
+[base.workspace]
+root = "."
+# Optional: limit all file changes to an existing workspace subdirectory.
+# write_directory = "out"
+# Optional bounded local read cache; 0 disables it. Does not reduce model input.
+read_cache_bytes = 0
+max_read_bytes = 104857600
+# Batch reads require workspace.read_many in tools.allowed.
+max_batch_files = 8
+max_batch_read_bytes = 104857600
+max_search_results = 50
+max_write_bytes = 256000
+
+[base.budget]
+currency = "USD"
+max_task_usd = "0.10"
+max_daily_usd = "1.00"
+
+[base.tools]
+allowed = ["context.describe"]
+
+[base.runtime]
+# Optional task-scoped model guidance; configured preserves the baseline.
+context_mode = "configured"
+# auto uses old-read references for prioritize_cost, full for balanced/prioritize_quality.
+history_read_mode = "auto"
+max_steps = 8
+max_tool_calls = 8
+tool_retries = 1
+timeout_seconds = 60
+offline = true
+
+[profiles.desktop]
+instructions = ["Focus on my project materials, action items, and written deliverables."]
+
+[profiles.desktop.preferences]
+response_style = "detailed"
+priorities = ["project_collaboration", "control_cost"]
+
+[profiles.mobile]
+instructions = ["Prioritize nearby options and actionable suggestions for my configured city."]
+
+[profiles.mobile.preferences]
+response_style = "concise"
+priorities = ["local_life", "control_cost"]
+
+[profiles.mobile.model]
+max_output_tokens = 512
+
+[profiles.mobile.budget]
+max_task_usd = "0.03"

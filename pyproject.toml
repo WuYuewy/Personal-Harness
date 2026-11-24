@@ -1,0 +1,87 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "personal-harness"
+dynamic = ["version"]
+description = "A lightweight personal agent harness shaped by your configuration."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2.10,<3", "typer>=0.15,<1", "pydantic-ai-slim>=2.69,<2.70"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX :: Linux",
+]
+
+[project.urls]
+Homepage = "https://github.com/WuYuewy/Personal-Harness"
+Documentation = "https://wuyuewy.github.io/Personal-Harness/"
+Repository = "https://github.com/WuYuewy/Personal-Harness"
+Issues = "https://github.com/WuYuewy/Personal-Harness/issues"
+
+[project.scripts]
+personal-harness = "personal_harness.cli:app"
+
+[project.optional-dependencies]
+ui = ["chainlit>=2.12,<2.13", "pydantic-ai-slim[openai]>=2.69,<2.70", "python-dotenv>=1.2,<2", "jieba>=0.42.1,<0.43", "pypdf>=5.9,<7"]
+api = ["pydantic-ai-slim[openai]>=2.69,<2.70", "python-dotenv>=1.2,<2"]
+
+[dependency-groups]
+dev = ["pytest>=8.3,<10", "ruff>=0.11,<1", "mypy>=1.15,<2", "markdown-it-py>=4,<5"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/personal_harness"]
+
+[tool.hatch.version]
+path = "src/personal_harness/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+only-include = [".env.example", ".gitattributes", ".github", ".gitignore", ".python-version", "CHANGELOG.md",
+  "IMPLEMENTATION_PLAN.md", "CONTRIBUTING.md", "SECURITY.md", "THIRD_PARTY_NOTICES.md", "LICENSE", "README.md", "docs",
+  "examples", "pyproject.toml", "scripts", "src", "tests", "uv.lock"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src/personal_harness"]
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["chainlit", "chainlit.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["personal_harness.chainlit_app", "personal_harness.ui_features"]
+# Chainlit's session get/set and message send methods have no upstream annotations.
+disable_error_code = ["no-untyped-call"]
+
+[[tool.mypy.overrides]]
+module = ["personal_harness.chainlit_data"]
+# Native Chainlit persistence decorators do not carry typing metadata upstream.
+disable_error_code = ["no-untyped-call", "untyped-decorator"]
+
+[[tool.mypy.overrides]]
+module = ["openai", "openai.*", "dotenv", "dotenv.*", "jieba", "jieba.*"]
+ignore_missing_imports = true
+
+[tool.uv]
+cache-dir = ".uv-cache"

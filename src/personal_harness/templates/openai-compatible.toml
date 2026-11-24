@@ -1,0 +1,67 @@
+# Edit endpoint, model, context window and prices before online use.
+schema_version = 1
+default_profile = "cowork"
+
+[base]
+instructions = ["Use the minimum necessary files and cite source paths. Ask before writing."]
+
+[base.preferences]
+language = "zh-CN"
+response_style = "concise"
+priorities = ["control_cost", "project_collaboration"]
+
+[base.model]
+provider = "openai-compatible"
+model = "your-model-id"
+base_url = "https://api.example.com/v1"
+api_key_env = "OPENAI_API_KEY"
+context_window = 32768
+# Replace these EXAMPLE prices with your provider's rates in CNY per million tokens.
+input_per_million_cny = "1"
+output_per_million_cny = "1"
+max_output_tokens = 512
+
+[base.budget]
+currency = "CNY"
+max_task_cny = "0.80"
+max_daily_cny = "2.00"
+# Optional cumulative cap for all model costs and holds in this config directory's ledger.
+# Includes earlier runs; no daily reset. Omit to retain only task/daily limits.
+# max_total_cny = "5.00"
+
+[base.workspace]
+root = "."
+# Optional: restrict previews, writes and exact replacements to this existing subdirectory.
+# write_directory = "out"
+# Optional bounded local read cache; enable only for a trusted local workspace.
+read_cache_bytes = 0
+max_read_bytes = 104857600
+# Opt in by adding workspace.read_many to tools.allowed.
+max_batch_files = 8
+max_batch_read_bytes = 104857600
+max_write_bytes = 32000
+
+[base.tools]
+allowed = ["workspace.list", "workspace.read", "workspace.search", "workspace.write_preview", "workspace.write"]
+# Optional model-facing read pages; separate from the 100 MiB local file limit.
+# max_read_result_chars = 24000
+
+[base.runtime]
+# Set task to scope SDK instructions to this run's selected tools.
+context_mode = "configured"
+# auto follows personal cost preference; full preserves all selected historical reads.
+# references omits only eligible older large file results in outgoing file tasks.
+history_read_mode = "auto"
+# Optional: compact older identical single-file read results in outgoing requests.
+# compact_read_history = true
+offline = false
+max_steps = 4
+max_tool_calls = 8
+tool_retries = 1
+# Retry transient gateway/network failures twice after the first attempt.
+provider_retries = 2
+# A slow request can take up to 90 seconds; total active task time is 240 seconds.
+request_timeout_seconds = 90
+timeout_seconds = 240
+
+[profiles.cowork]

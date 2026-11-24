@@ -1,0 +1,46 @@
+# Local environments and caches
+.venv/
+.python/
+.uv-cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+/.pytest-*/
+/.pytest-*.log
+.test-tmp/
+.ruff_cache/
+.mypy_cache/
+dist/
+.dist-*/
+build/
+*.egg-info/
+
+# Personal configuration, secrets and runtime data
+.env
+.env.*
+!.env.example
+personal-harness.toml
+personal-harness.*.toml
+.personal-harness/
+.chainlit/
+.files/
+chainlit.md
+/public/elements/ModelConnections.jsx
+/public/elements/UserInsights.jsx
+/public/elements/WorkspaceWelcome.jsx
+/public/elements/PersonalScenes.jsx
+/public/elements/LocalResults.jsx
+/public/elements/ReportRecipes.jsx
+/public/elements/RunReceipt.jsx
+/public/favicon.png
+/public/vendor/
+/public/harness.js
+/public/harness.css
+examples/workspace-demo/brief.md
+*.sqlite*
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

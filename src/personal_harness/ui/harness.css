@@ -1,0 +1,205 @@
+/* Chainlit 2.12 exposes theme tokens and IDs for the native chat controls. */
+:root body, :root.light body {
+  --background: 42 24% 98%;
+  --foreground: 160 13% 13%;
+  --card: 45 29% 99%;
+  --card-foreground: var(--foreground);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+  --muted: 42 16% 93%;
+  --muted-foreground: 155 7% 36%;
+  --accent: 153 15% 92%;
+  --accent-foreground: var(--foreground);
+  --border: 49 12% 87%;
+  --input: 48 11% 79%;
+  --primary: 159 47% 28%;
+  --primary-foreground: 0 0% 100%;
+  --ring: 159 41% 39%;
+  --command: var(--primary);
+  --sidebar: 44 19% 94%;
+  --sidebar-background: var(--sidebar);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-border: var(--border);
+  --sidebar-accent: 147 14% 88%;
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-ring: var(--ring);
+}
+
+:root.dark body {
+  --background: 157 9% 10%;
+  --foreground: 48 14% 92%;
+  --card: 157 8% 13%;
+  --card-foreground: var(--foreground);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+  --muted: 155 7% 17%;
+  --muted-foreground: 148 6% 68%;
+  --accent: 154 9% 18%;
+  --accent-foreground: var(--foreground);
+  --border: 152 8% 21%;
+  --input: 152 8% 31%;
+  --primary: 154 39% 69%;
+  --primary-foreground: 157 28% 12%;
+  --ring: 154 32% 57%;
+  --sidebar: 155 8% 8%;
+  --sidebar-accent: 152 9% 16%;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei UI", system-ui, sans-serif;
+}
+
+[data-sidebar="sidebar"] { border-inline-end: 1px solid hsl(var(--border)); }
+[data-sidebar="header"] { border-bottom: 1px solid hsl(var(--border)); margin: 0 10px; padding-inline: 0; }
+[data-sidebar="header"]::before {
+  content: "Personal Harness";
+  padding: 3px 8px 0;
+  color: hsl(var(--foreground));
+  font-size: 14px;
+  font-weight: 650;
+}
+[data-sidebar="menu-button"][data-active="true"] { background-color: hsl(var(--sidebar-accent)); }
+#thread-history [role="status"] {
+  color: hsl(var(--muted-foreground));
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+#thread-history [role="status"] p { color: inherit; }
+#thread-history [role="status"] svg { color: inherit; fill: currentColor; }
+#header { border-bottom: 1px solid hsl(var(--border)); }
+#chat-profiles { font-size: 14px; color: hsl(var(--foreground)); border-radius: 8px; }
+#readme-button { font-size: 12px; color: hsl(var(--muted-foreground)); }
+#message-composer {
+  border: 1px solid hsl(var(--input));
+  border-radius: 18px;
+  background: hsl(var(--card));
+  min-height: 0;
+  padding: 11px 13px;
+}
+#message-composer:focus-within { border-color: hsl(var(--ring)); }
+#chat-input { font-size: 15px; }
+#message-composer .command-button { border-radius: 8px; color: hsl(var(--muted-foreground)); }
+#message-composer .command-button span { display: inline; }
+#chat-submit { border-radius: 10px; }
+
+.step:has(.harness-welcome):has(~ .step) { display: none; }
+.ai-message:has(.harness-welcome) > :first-child:not(:has(.harness-welcome)) { display: none; }
+.harness-welcome { width: min(100%, 35rem); margin: clamp(36px, 20vh, 190px) auto 20px; }
+.harness-welcome-title { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; }
+.harness-welcome h1 { font-size: clamp(25px, 4vw, 36px); letter-spacing: -.04em; font-weight: 620; }
+.harness-welcome p { color: hsl(var(--muted-foreground)); line-height: 1.65; }
+.harness-welcome-details { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 20px; font-size: 13px; }
+.harness-mode { display: inline-flex; align-items: center; gap: 6px; }
+.harness-mode::before { content: ""; background: hsl(var(--muted-foreground)); border-radius: 50%; width: 6px; height: 6px; }
+.harness-mode[data-online="true"]::before { background: hsl(var(--primary)); }
+.harness-model-name { overflow-wrap: anywhere; color: hsl(var(--muted-foreground)); }
+.harness-welcome-details button { padding: 5px 9px; border: 1px solid hsl(var(--border)); border-radius: 7px; }
+.harness-welcome-details button:hover { background: hsl(var(--accent)); }
+.harness-welcome .harness-status { margin-top: 12px; }
+
+.harness-panel { border: 1px solid hsl(var(--border)); border-radius: 14px; padding: clamp(14px, 3vw, 22px); background: hsl(var(--card)); min-width: 0; }
+.harness-panel h2 { font-size: 18px; font-weight: 650; margin-bottom: 8px; }
+.harness-panel p { color: hsl(var(--muted-foreground)); line-height: 1.6; margin-bottom: 12px; }
+.harness-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+.harness-panel label { display: flex; flex-direction: column; gap: 5px; font-size: 13px; }
+.harness-panel input,.harness-panel select { border: 1px solid hsl(var(--input)); border-radius: 7px; background: hsl(var(--background)); color: inherit; padding: 9px; width: 100%; min-width: 0; }
+.harness-panel button { border: 1px solid hsl(var(--border)); border-radius: 8px; padding: 8px 12px; margin: 12px 8px 0 0; }
+.harness-panel button:not([type="submit"]):hover { background: hsl(var(--accent)); }
+.harness-panel button[type=submit] { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
+.harness-panel .harness-status { margin-top: 12px; white-space: pre-wrap; }
+.harness-panel .harness-status:empty, .harness-welcome .harness-status:empty { margin: 0; }
+.harness-panel :is(button, input, select, textarea, summary):focus-visible,
+.harness-welcome button:focus-visible, .harness-receipt summary:focus-visible {
+  outline: 2px solid hsl(var(--ring)); outline-offset: 2px;
+}
+.harness-tool-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.harness-tool-grid > button { margin: 0; text-align: start; min-width: 0; }
+.harness-tool-grid strong { display: block; font-size: 14px; font-weight: 600; }
+.harness-tool-grid span { display: block; font-size: 12px; color: hsl(var(--muted-foreground)); margin-top: 4px; }
+.harness-local-form { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; margin-top: 12px; }
+.harness-local-form label { flex: 1 1 180px; min-width: 0; }
+.harness-local-form button { margin: 0; }
+.harness-scenes { overflow-wrap: anywhere; }
+.harness-scenes ul { list-style: none; padding: 0; margin: 16px 0; }
+.harness-scenes li { border-top: 1px solid hsl(var(--border)); padding: 10px 0; }
+.harness-scenes li > span { margin-inline-start: 8px; color: hsl(var(--muted-foreground)); font-size: 13px; }
+.harness-scene-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.harness-scene-actions button { margin: 0; padding: 4px 8px; }
+.harness-shortcuts { margin-top: 16px; border-top: 1px solid hsl(var(--border)); padding-top: 10px; }
+.harness-shortcuts h3 { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.harness-shortcuts ul { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.harness-shortcuts li { display: flex; flex-wrap: wrap; gap: 4px; min-width: 0; max-width: 100%; }
+.harness-shortcuts button { margin: 0; padding: 5px 9px; border: 1px solid hsl(var(--border)); border-radius: 7px; font-size: 13px; min-width: 0; max-width: 100%; overflow-wrap: anywhere; text-align: start; }
+.harness-shortcuts button:hover { background: hsl(var(--accent)); }
+.harness-local-results { overflow-wrap: anywhere; }
+.harness-local-results :is(ol, ul) { margin: 0 0 12px; }
+.harness-local-results li { padding: 8px 0; border-top: 1px solid hsl(var(--border)); }
+.harness-local-results li > span { display: block; white-space: pre-wrap; margin-top: 3px; }
+.harness-csv-row { margin: 6px 0 0; display: grid; gap: 4px; }
+.harness-csv-row > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 8px; }
+.harness-csv-row dt { font-size: .85em; opacity: .8; }
+.harness-csv-row dd { margin: 0; white-space: pre-wrap; }
+.harness-summary-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 12px 0 0; }
+.harness-summary-stats > div { border: 1px solid hsl(var(--border)); border-radius: 7px; padding: 9px; min-width: 0; }
+.harness-summary-stats dt { color: hsl(var(--muted-foreground)); font-size: 12px; }
+.harness-summary-stats dd { margin: 4px 0 0; overflow-wrap: anywhere; }
+.harness-recipe-panel { overflow-wrap: anywhere; }
+.harness-recipe-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; margin: 10px 0; }
+.harness-recipe-actions label { flex: 1 1 220px; }
+.harness-recipe-actions button,.harness-recipe-form button,.harness-recipe-preview button { margin: 0; }
+.harness-recipe-stats { font-size: 12px; }
+.harness-recipe-form { display: grid; gap: 12px; margin: 12px 0; }
+.harness-recipe-form label { display: grid; gap: 5px; font-size: 13px; }
+.harness-recipe-form input,.harness-recipe-form textarea,.harness-recipe-actions select { width: 100%; min-width: 0; padding: 9px; border: 1px solid hsl(var(--input)); border-radius: 7px; background: hsl(var(--background)); color: inherit; }
+.harness-recipe-preview { display: grid; gap: 8px; margin-top: 16px; padding-top: 12px; border-top: 1px solid hsl(var(--border)); }
+.harness-recipe-preview pre { max-height: 360px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+.harness-marker-list { max-height: 360px; overflow: auto; padding: 10px; border: 1px solid hsl(var(--border)); border-radius: 8px; }
+.harness-marker { margin-top: 12px; }
+.harness-marker span { display: block; font-size: 12px; opacity: .8; margin: 4px 0; }
+.harness-marker p { white-space: pre-wrap; overflow-wrap: anywhere; }
+.harness-model-toolbar { display: flex; align-items: end; flex-wrap: wrap; gap: 8px; }
+.harness-model-toolbar label { flex: 1 1 12rem; }
+.harness-model-toolbar button { min-height: 38px; margin: 0; }
+.harness-model-panel fieldset { min-width: 0; margin-top: 16px; }
+.harness-model-panel legend { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+.harness-model-panel .harness-model-default { display: flex; align-items: center; gap: 7px; margin-top: 10px; }
+.harness-model-default input { width: auto; accent-color: hsl(var(--primary)); }
+.harness-receipt { border-top: 1px solid hsl(var(--border)); margin-top: 6px; padding: 8px 0 0; color: hsl(var(--muted-foreground)); font-size: 13px; }
+.harness-receipt summary { cursor: pointer; padding-block: 4px; }
+.harness-receipt-label { margin-inline-start: 10px; text-decoration: underline; text-underline-offset: 3px; }
+.harness-receipt-details { margin-top: 8px; padding: 10px 14px; border-radius: 8px; background: hsl(var(--muted)); overflow-wrap: anywhere; }
+.harness-receipt-details ul { list-style: disc; padding-inline-start: 18px; margin-block: 6px; }
+.harness-receipt-details pre { margin-top: 10px; white-space: pre-wrap; max-height: 18rem; overflow: auto; }
+.insight-panel h3 { font-weight: 600; margin: 18px 0 10px; }
+.insight-panel textarea { resize: vertical; min-height: 75px; width: 100%; border: 1px solid hsl(var(--input)); border-radius: 8px; background: hsl(var(--background)); padding: 10px; color: inherit; }
+.insight-options { background: hsl(var(--muted)); border-radius: 10px; padding: 14px; }
+.insight-options label { flex-direction: row; align-items: center; gap: 10px; margin: 8px 0; }
+.insight-options input[type=checkbox] { width: 18px; height: 18px; flex-shrink: 0; }
+.insight-tabs { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+.insight-tabs button[aria-selected=true] { background: hsl(var(--muted)); border-color: hsl(var(--ring)); }
+.insight-memory { border: 1px solid hsl(var(--border)); border-radius: 10px; padding: 12px; margin: 10px 0; }
+.insight-memory label { margin-top: 8px; }
+.insight-panel .insight-meta { font-size: 12px; margin-top: 8px; }
+.insight-meta a { text-decoration: underline; }
+.insight-charts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.insight-chart { min-width: 0; border: 1px solid hsl(var(--border)); padding: 12px; border-radius: 10px; }
+.insight-canvas { height: 260px; width: 100%; position: relative; }
+.insight-chart details { font-size: 12px; margin-top: 12px; }
+.insight-reset { border-top: 1px solid hsl(var(--border)); margin-top: 20px; padding-top: 8px; }
+.insight-panel button:disabled { opacity: .5; }
+@media(max-width:600px) {
+  .harness-grid, .insight-charts { grid-template-columns: 1fr; }
+  .harness-tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .harness-panel { width: 100%; overflow-wrap: anywhere; }
+  .harness-welcome { margin-top: 32px; }
+  .harness-welcome-title { gap: 10px; }
+  .harness-welcome-title img { width: 34px; height: 34px; }
+  #header > .flex:first-child { min-width: 0; }
+  #header > .flex:first-child > .relative { min-width: 0; }
+  #header > .flex:last-child { flex-shrink: 0; }
+  #chat-profiles { min-width: 0; max-width: 100%; padding-inline: 4px; font-size: 14px; }
+  #chat-profiles > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+}

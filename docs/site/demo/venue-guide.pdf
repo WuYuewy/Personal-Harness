@@ -1,0 +1,159 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/Producer (pypdf)
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Count 4
+/Kids [ 4 0 R 7 0 R 10 0 R 13 0 R ]
+>>
+endobj
+3 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/Resources <<
+/Font <<
+/F1 5 0 R
+>>
+>>
+/MediaBox [ 0.0 0.0 595 842 ]
+/Parent 2 0 R
+/Contents 6 0 R
+>>
+endobj
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+6 0 obj
+<<
+/Length 105
+>>
+stream
+BT /F1 14 Tf 50 760 Td (Workshop guide - example) Tj 0 -28 Td (Total capacity: 12 people.) Tj 0 -28 Td ET
+endstream
+endobj
+7 0 obj
+<<
+/Type /Page
+/Resources <<
+/Font <<
+/F1 8 0 R
+>>
+>>
+/MediaBox [ 0.0 0.0 595 842 ]
+/Parent 2 0 R
+/Contents 9 0 R
+>>
+endobj
+8 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+9 0 obj
+<<
+/Length 104
+>>
+stream
+BT /F1 14 Tf 50 760 Td (Schedule) Tj 0 -28 Td (Start Saturday 14:00. End Saturday 17:30.) Tj 0 -28 Td ET
+endstream
+endobj
+10 0 obj
+<<
+/Type /Page
+/Resources <<
+/Font <<
+/F1 11 0 R
+>>
+>>
+/MediaBox [ 0.0 0.0 595 842 ]
+/Parent 2 0 R
+/Contents 12 0 R
+>>
+endobj
+11 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+12 0 obj
+<<
+/Length 106
+>>
+stream
+BT /F1 14 Tf 50 760 Td (Weather) Tj 0 -28 Td (In rain, use the indoor room. Do not cancel.) Tj 0 -28 Td ET
+endstream
+endobj
+13 0 obj
+<<
+/Type /Page
+/Resources <<
+/Font <<
+/F1 14 0 R
+>>
+>>
+/MediaBox [ 0.0 0.0 595 842 ]
+/Parent 2 0 R
+/Contents 15 0 R
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+15 0 obj
+<<
+/Length 173
+>>
+stream
+BT /F1 14 Tf 50 760 Td (Check-in) Tj 0 -28 Td (Chen Ning brings the door card at Saturday 13:30.) Tj 0 -28 Td (The long-term card custodian is not confirmed.) Tj 0 -28 Td ET
+endstream
+endobj
+xref
+0 16
+0000000000 65535 f 
+0000000015 00000 n 
+0000000054 00000 n 
+0000000133 00000 n 
+0000000182 00000 n 
+0000000314 00000 n 
+0000000384 00000 n 
+0000000540 00000 n 
+0000000672 00000 n 
+0000000742 00000 n 
+0000000897 00000 n 
+0000001032 00000 n 
+0000001103 00000 n 
+0000001261 00000 n 
+0000001396 00000 n 
+0000001467 00000 n 
+trailer
+<<
+/Size 16
+/Root 3 0 R
+/Info 1 0 R
+>>
+startxref
+1692
+%%EOF

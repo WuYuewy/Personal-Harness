@@ -1,0 +1,33 @@
+[project]
+user_env = []
+persist_user_env = false
+mask_user_env = true
+session_timeout = 3600
+
+[features]
+unsafe_allow_html = false
+edit_message = false
+favorites = true
+allow_thread_sharing = false
+
+[features.spontaneous_file_upload]
+enabled = true
+accept = { "text/*" = [], "application/json" = [], "application/xml" = [], "application/javascript" = [], "application/x-yaml" = [], "application/pdf" = [], "application/octet-stream" = [".txt", ".md", ".markdown", ".csv", ".tsv", ".json", ".jsonl", ".yaml", ".yml", ".toml", ".xml", ".log", ".py", ".js", ".ts"] }
+max_files = 5
+max_size_mb = 100
+
+[UI]
+name = "Personal Harness"
+language = "zh-CN"
+layout = "default"
+default_sidebar_state = "open"
+default_theme = "light"
+chat_settings_location = "sidebar"
+cot = "tool_call"
+custom_css = "/public/harness.css"
+custom_js = "/public/harness.js"
+custom_build = ".chainlit/frontend"
+alert_style = "modern"
+
+[meta]
+generated_by = "2.12.0"

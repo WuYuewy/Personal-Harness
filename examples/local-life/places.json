@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "source": "synthetic-local-life-example; fictional places",
+  "fetched_at": "2026-11-19T08:00:00+08:00",
+  "city": "示例城市",
+  "places": [
+    {
+      "id": "noodles",
+      "name": "示例面馆",
+      "category": "餐厅",
+      "price_cny": 25,
+      "latitude": 31.821,
+      "longitude": 117.23,
+      "open_status": "unknown"
+    },
+    {
+      "id": "rice",
+      "name": "示例饭馆",
+      "category": "餐厅",
+      "price_cny": 12,
+      "latitude": 31.822,
+      "longitude": 117.23,
+      "open_status": "open"
+    },
+    {
+      "id": "distant",
+      "name": "示例远处餐厅",
+      "category": "餐厅",
+      "price_cny": 20,
+      "latitude": 31.9,
+      "longitude": 117.23,
+      "open_status": "closed"
+    }
+  ]
+}

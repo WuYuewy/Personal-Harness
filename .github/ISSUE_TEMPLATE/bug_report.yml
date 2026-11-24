@@ -1,0 +1,25 @@
+name: Bug report
+description: Report a reproducible problem with a local installation.
+body:
+  - type: markdown
+    attributes:
+      value: Do not include API keys, private chats, databases or personal documents.
+  - type: input
+    id: version
+    attributes:
+      label: Version and environment
+      description: Personal Harness, Python, operating system, browser.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include the expected and actual result, with synthetic inputs.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Redacted diagnostics
+      description: Error reason or minimal log; remove credentials and personal content.
